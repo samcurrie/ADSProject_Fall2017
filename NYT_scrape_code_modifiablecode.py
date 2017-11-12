@@ -59,6 +59,9 @@ def write_processed_article(url, name): #this function writes the text into a tx
 def filename_for_info(info):    #this function assigns the file name for the previous one
     url_mod = info['url'].replace("/", "_") #'/' replaced with '_'
     url_mod = url_mod.replace(":", "_") #':' replaced with '_'
+    url_mod = url_mod.replace("?", "_")
+    url_mod = url_mod.replace("&", "_")
+    url_mod = url_mod.replace("%", "_")
     return info['date'] + url_mod +".txt"   #all parts of filename assembled
 
 
